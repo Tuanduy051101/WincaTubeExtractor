@@ -33,7 +33,6 @@ import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeMusicSear
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubePlaylistExtractor;
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeSearchExtractor;
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeStreamExtractor;
-import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeStreamExtractorTwoPhase;
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeSubscriptionExtractor;
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeSuggestionExtractor;
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeTrendingExtractor;
@@ -111,15 +110,6 @@ public class YoutubeService extends StreamingService {
     @Override
     public StreamExtractor getStreamExtractor(final LinkHandler linkHandler) {
         return new YoutubeStreamExtractor(this, linkHandler);
-    }
-
-    /**
-     * Tạo một YoutubeStreamExtractorTwoPhase mới với khả năng tải 2 giai đoạn
-     * @param linkHandler LinkHandler chứa URL của video
-     * @return YoutubeStreamExtractorTwoPhase mới
-     */
-    public YoutubeStreamExtractorTwoPhase getStreamExtractorTwoPhase(final LinkHandler linkHandler) {
-        return new YoutubeStreamExtractorTwoPhase(this, linkHandler);
     }
 
     @Override
